@@ -3,6 +3,25 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import AppRouter from "./routers/AppRouter";
 import "./App.css";
+import { createStore } from "redux";
+import { type } from "@testing-library/user-event/dist/type";
+
+const initialState = {
+  count: 0,
+};
+
+//Store
+
+const store = createStore((state = initialState) => {
+  return state;
+});
+
+store.dispatch({
+  type: "INCREMENT",
+});
+store.dispatch({
+  type: "INCREMENT",
+});
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppRouter />);
